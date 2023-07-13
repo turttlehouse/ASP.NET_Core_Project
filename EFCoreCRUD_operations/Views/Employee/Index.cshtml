@@ -21,6 +21,10 @@
             <td>@x.Id</td>
             <td>@x.Name</td>
             <td>@x.salary</td>
+
+            <td>
+                <a asp-action="Delete" asp-route-id ="@x.Id">Delete</a>
+            </td>
         </tr>
     }
 </table>
