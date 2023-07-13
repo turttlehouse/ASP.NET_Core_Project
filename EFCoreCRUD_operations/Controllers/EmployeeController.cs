@@ -13,7 +13,9 @@ namespace EFCoreCRUD_operations.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var tabledata = context.Employees.ToList();
+
+            return View(tabledata);
         }
     }
 }

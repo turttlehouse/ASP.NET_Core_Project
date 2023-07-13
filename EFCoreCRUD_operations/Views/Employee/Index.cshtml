@@ -4,4 +4,19 @@
 }
 
 <h1>Index</h1>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Salary</td>
+    </tr>
 
+    @foreach(var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.Name</td>
+            <td>@x.salary</td>
+        </tr>
+    }
+</table>
