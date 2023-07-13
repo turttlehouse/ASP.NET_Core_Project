@@ -28,24 +28,33 @@ namespace EFCoreCRUD_operations.Controllers
 
         public IActionResult Create(Employees model)
         {
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid)
+            //{
+            //    var data = new Employees
+            //    {
+            //        Name = model.Name,
+            //        salary = model.salary,
+
+            //    };
+            //    context.Employees.Add(data);
+            //    context.SaveChanges();
+
+            //    return RedirectToAction("Index");   
+
+            //}
+            //else
+            //{ 
+            //    return View(model);
+            //}
+            var data = new Employees
             {
-                var data = new Employees
-                {
-                    Name = model.Name,
-                    salary = model.salary,
+                Name = "John",
+                salary = 5000,
+            };
+            context.Employees.Add(data);
+            context.SaveChanges();
 
-                };
-                context.Employees.Add(data);
-                context.SaveChanges();
-
-                return RedirectToAction("Index");   
-
-            }
-            else
-            { 
-                return View(model);
-            }
+            return RedirectToAction("Index");
 
         }
     }
