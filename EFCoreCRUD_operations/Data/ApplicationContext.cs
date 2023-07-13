@@ -10,6 +10,6 @@ namespace EFCoreCRUD_operations.Data
     {
         public ApplicationContext(DbContextOptions<ApplicationContext>options) :base(options){ }
 
-        public DbSet<Employees> Employees { get; set; }
+        public DbSet<Employees> Employees { get; set; }  //we have defined the Table named to be Employees here which the one outside of the Dbset
     }
 }
