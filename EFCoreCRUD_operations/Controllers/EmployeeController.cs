@@ -17,5 +17,10 @@ namespace EFCoreCRUD_operations.Controllers
 
             return View(tabledata);
         }
+
+        public IActionResult Create()
+        {
+            return View();  
+        }
     }
 }
