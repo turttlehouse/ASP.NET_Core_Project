@@ -69,5 +69,44 @@ namespace EFCoreCRUD_operations.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");   
         }
+
+        public IActionResult Update(int id)
+        {
+            var emp = context.Employees.SingleOrDefault(x=> x.Id == id);
+            var result = new Employees()
+            {
+                Name = emp.Name,
+                salary = emp.salary,
+            };
+           
+
+           
+
+            return View(result);  
+        }
+
+        [HttpPost]
+
+        public IActionResult Update(Employees model)
+        {
+            if (ModelState.IsValid)
+            {
+                var data = new Employees
+                {
+                    Name = model.Name,
+                    salary = model.salary,
+
+                };
+                context.Employees.Add(data);
+                context.SaveChanges();
+
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return View(model);
+            }
+        }
     }
 }

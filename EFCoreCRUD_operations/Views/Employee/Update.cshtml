@@ -1,0 +1,21 @@
+﻿@model EFCoreCRUD_operations.Models.Employees;
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+
+<form method="post" asp-action="Update">
+
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    <br />
+    <input asp-for="salary" />
+    <span asp-validation-for="salary"></span>
+
+    <br />
+    <input type="submit" value="Submit" />
+
+</form>
+
