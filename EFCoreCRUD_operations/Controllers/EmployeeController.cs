@@ -1,4 +1,5 @@
 ﻿using EFCoreCRUD_operations.Data;
+using EFCoreCRUD_operations.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EFCoreCRUD_operations.Controllers
@@ -21,6 +22,31 @@ namespace EFCoreCRUD_operations.Controllers
         public IActionResult Create()
         {
             return View();  
+        }
+
+        [HttpPost]
+
+        public IActionResult Create(Employees model)
+        {
+            if (ModelState.IsValid)
+            {
+                var data = new Employees
+                {
+                    Name = model.Name,
+                    salary = model.salary,
+
+                };
+                context.Employees.Add(data);
+                context.SaveChanges();
+
+                return RedirectToAction("Index");   
+
+            }
+            else
+            { 
+                return View(model);
+            }
+
         }
     }
 }
